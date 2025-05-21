@@ -1,0 +1,30 @@
+import React from 'react';
+import { LayoutDashboardIcon, UsersIcon, UserCheckIcon, UserIcon, ClipboardListIcon, FileTextIcon, ArrowDownCircleIcon, WalletIcon, BanknoteIcon, CalculatorIcon, BookIcon, TrendingUpIcon, PieChartIcon, FileIcon, FileBarChartIcon, CoinsIcon, PercentIcon, FolderIcon, HelpCircleIcon, Users2Icon, BellIcon, SettingsIcon, DollarSignIcon, FileEditIcon } from 'lucide-react';
+export const NavigationIcons = {
+  dashboard: <LayoutDashboardIcon className="w-5 h-5" />,
+  members: <UsersIcon className="w-5 h-5" />,
+  loans: <FileTextIcon className="w-5 h-5" />,
+  users: <Users2Icon className="w-5 h-5" />,
+  systemConfig: <SettingsIcon className="w-5 h-5" />,
+  loanCalculator: <CalculatorIcon className="w-5 h-5" />,
+  generalLedger: <BookIcon className="w-5 h-5" />,
+  revenueAnalysis: <TrendingUpIcon className="w-5 h-5" />,
+  capitalShares: <PieChartIcon className="w-5 h-5" />,
+  statements: <FileIcon className="w-5 h-5" />,
+  reports: <FileBarChartIcon className="w-5 h-5" />,
+  fundsManagement: <DollarSignIcon className="w-5 h-5" />,
+  withdrawalRequests: <WalletIcon className="w-5 h-5" />,
+  depositRequests: <BanknoteIcon className="w-5 h-5" />,
+  contentManagement: <FileEditIcon className="w-5 h-5" />,
+  memberRegistration: <UserCheckIcon className="w-5 h-5" />,
+  memberApprovals: <UserCheckIcon className="w-5 h-5" />,
+  borrowers: <UserIcon className="w-5 h-5" />,
+  systemLogs: <ClipboardListIcon className="w-5 h-5" />,
+  repayments: <ArrowDownCircleIcon className="w-5 h-5" />,
+  announcements: <BellIcon className="w-5 h-5" />,
+  requestLoan: <CalculatorIcon className="w-5 h-5" />,
+  depositShares: <CoinsIcon className="w-5 h-5" />,
+  accountDividend: <PercentIcon className="w-5 h-5" />,
+  documents: <FolderIcon className="w-5 h-5" />,
+  support: <HelpCircleIcon className="w-5 h-5" />
+};

@@ -1,0 +1,214 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './styles/landing.css';
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(5%, 5%) rotate(120deg);
+  }
+  66% {
+    transform: translate(-5%, 2%) rotate(240deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+.animate-float {
+  animation: float 20s infinite ease-in-out;
+}
+
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, currentColor 1px, transparent 1px),
+    linear-gradient(to bottom, currentColor 1px, transparent 1px);
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 346.8 77.2% 49.8%;
+  --primary-foreground: 355.7 100% 97.3%;
+  --secondary: 220 14.3% 95.9%;
+  --secondary-foreground: 220.9 39.3% 11%;
+  --muted: 220 14.3% 95.9%;
+  --muted-foreground: 220 8.9% 46.1%;
+  --accent: 220 14.3% 95.9%;
+  --accent-foreground: 220.9 39.3% 11%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 20% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 346.8 77.2% 49.8%;
+  --radius: 0.5rem;
+  --neon-red: 220, 20, 60;
+}
+
+.bg-neon-red {
+  background-color: rgb(var(--neon-red));
+}
+
+.text-neon-red {
+  color: rgb(var(--neon-red));
+}
+
+[data-theme='light'] {
+  --bg-card: 255, 255, 255;
+  --bg-page: 249, 250, 251;
+  --bg-sidebar: 255, 255, 255;
+  --text-primary: 15, 23, 42;
+  --text-secondary: 100, 116, 139;
+  --border-color: 226, 232, 240;
+  --input-bg: 255, 255, 255;
+  --button-primary: var(--neon-red);
+  --button-hover: var(--neon-red);
+  --scrollbar-thumb: 226, 232, 240;
+  --scrollbar-track: 249, 250, 251;
+}
+
+[data-theme='dark'] {
+  --bg-card: 30, 41, 59;
+  --bg-page: 17, 24, 39;
+  --bg-sidebar: 30, 41, 59;
+  --text-primary: 241, 245, 249;
+  --text-secondary: 148, 163, 184;
+  --border-color: 51, 65, 85;
+  --input-bg: 51, 65, 85;
+  --button-primary: var(--neon-red);
+  --button-hover: var(--neon-red);
+  --scrollbar-thumb: 51, 65, 85;
+  --scrollbar-track: 30, 41, 59;
+}
+
+body {
+  transition: background-color 0.3s ease;
+  scroll-behavior: smooth;
+}
+
+input, button {
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+  box-shadow: 0 0 0 2px rgba(var(--button-primary), 0.3);
+}
+
+.card-enter {
+  animation: cardEnter 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform-origin: center;
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+}
+
+@keyframes cardEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.hover-underline-animation {
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: rgb(var(--neon-red));
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Modern scrollbar styling */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--scrollbar-thumb), 0.5) rgba(var(--scrollbar-track), 0.1);
+  scroll-behavior: smooth;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(var(--scrollbar-track), 0.1);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(var(--scrollbar-thumb), 0.5);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--scrollbar-thumb), 0.8);
+}
+
+/* Hide scrollbar when not in use, but still allow scrolling */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  opacity: 1;
+}
+
+/* Navigation section animation */
+.nav-section-enter {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-section-enter-active {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.nav-section-exit {
+  max-height: 1000px;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.nav-section-exit-active {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
